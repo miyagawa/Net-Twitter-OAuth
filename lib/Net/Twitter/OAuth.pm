@@ -2,7 +2,7 @@ package Net::Twitter::OAuth;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use base qw( Net::Twitter );
 
