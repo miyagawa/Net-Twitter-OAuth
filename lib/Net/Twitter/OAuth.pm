@@ -2,7 +2,7 @@ package Net::Twitter::OAuth;
 
 use strict;
 use 5.008_001;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use base qw( Net::Twitter );
 
@@ -117,7 +117,7 @@ Developer screen L<http://twitter.com/oauth_clients>.
 
 Sets access token and secret, saved in your app's local storage
 (e.g. config file, cookie or session database). This allows you to
-calling APIs once the application is authorized by the user.
+call APIs once the application is authorized by the user.
 
 =item is_authorized
 

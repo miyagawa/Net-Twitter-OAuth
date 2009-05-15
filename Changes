@@ -1,5 +1,9 @@
 Revision history for Perl extension Net::Twitter::OAuth
 
+0.03  Fri May 15 14:32:38 PDT 2009
+        - Don't send 'source' param in update since Twitter takes OAuth client's setting for 'from'
+          http://apiwiki.twitter.com/FAQ#HowdoIget“fromMyApp”appendedtoupdatessentfrommyAPIapplication
+
 0.02  Thu May 14 19:01:06 PDT 2009
         - Added proper dependencies.
 
