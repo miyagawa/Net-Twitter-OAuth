@@ -16,6 +16,10 @@ sub get {
 sub post {
     my $self = shift;
     my($url, $args) = @_;
+
+    # OAuth doesn't support 'source' prarameter anymore
+    delete $args->{source};
+
     # Net::OAuth::Simple doesn't really do POST encoding but seems to work
     $self->{oauth}->make_restricted_request($url, 'POST', %$args);
 }
