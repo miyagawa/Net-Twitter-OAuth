@@ -1,5 +1,9 @@
 Revision history for Perl extension Net::Twitter::OAuth
 
+0.05  Tue May 19 01:57:30 PDT 2009
+        - Fixed a documentation typo and code bugs around handling Cookies.
+          (Thanks to typester)
+
 0.04  Tue May 19 01:25:43 PDT 2009
         - Removed mentions to OAuth related shortcuts in the document in favor of using $client->oauth to
           deal with those authentication parameters. The old code continues to work. See perldoc
