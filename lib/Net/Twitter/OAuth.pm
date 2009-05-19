@@ -98,7 +98,7 @@ Here's how to authorize users as a desktop app mode:
       consumer_secret => "YOUR-CONSUMER-SECRET",
   );
 
-  # You'll save these token and secret in cookie, config file or session database
+  # You'll save these token in a config file or app registry
   my($access_token, $access_token_secret) = restore_tokens();
   if ($access_token && $access_token_secret) {
       $client->oauth->access_token($access_token);
@@ -152,7 +152,8 @@ secret to upgrade the request token to access token.
       my($access_token, $access_token_secret)
           = $client->oauth->request_access_token;
 
-      # Save $access_token and $access_token_secret in the database associated with $c->user
+      # Save $access_token and $access_token_secret in the database
+      save_oauth_tokens($c->user);
   }
 
 Later on, you can retrieve and reset those access token and secret
@@ -161,7 +162,7 @@ before calling any Twitter API methods.
   sub make_tweet : Local {
       my($self, $c) = @_;
 
-      my($access_token, $access_token_secret) = ...;
+      my($access_token, $access_token_secret) = restore_oauth_tokens($c->user);
 
       my $client = Net::Twitter::OAuth->new(%param);
       $client->oauth->access_token($access_token);
