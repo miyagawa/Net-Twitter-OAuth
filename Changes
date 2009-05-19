@@ -1,5 +1,11 @@
 Revision history for Perl extension Net::Twitter::OAuth
 
+0.04  Tue May 19 01:25:43 PDT 2009
+        - Removed mentions to OAuth related shortcuts in the document in favor of using $client->oauth to
+          deal with those authentication parameters. The old code continues to work. See perldoc
+          Net::OAuth::Simple for details.
+        - Rewrote and added a complete example for desktop and web applications how to authorize users.
+
 0.03  Fri May 15 14:32:38 PDT 2009
         - Don't send 'source' param in update since Twitter takes OAuth client's setting for 'from'
           http://apiwiki.twitter.com/FAQ#HowdoIget“fromMyApp”appendedtoupdatessentfrommyAPIapplication
