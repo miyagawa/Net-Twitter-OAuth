@@ -143,11 +143,11 @@ secret to upgrade the request token to access token.
   sub twitter_auth_callback : Local {
       my($self, $c) = @_;
 
-      my $cookie = $c->request->cookies->{oauth}->value;
+      my %cookie = $c->request->cookies->{oauth}->value;
 
       my $client = Net::Twitter::OAuth->new(%param);
-      $client->oauth->request_token($cookie->{token});
-      $client->oauth->request_token_secret($cookie->{token_secret});
+      $client->oauth->request_token($cookie{token});
+      $client->oauth->request_token_secret($cookie{token_secret});
 
       my($access_token, $access_token_secret)
           = $client->oauth->request_access_token;
