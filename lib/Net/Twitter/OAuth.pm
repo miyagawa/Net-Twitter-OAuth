@@ -146,8 +146,8 @@ secret to upgrade the request token to access token.
       my $cookie = $c->response->cookies->{oauth}->value;
 
       my $client = Net::Twitter::OAuth->new(%param);
-      $client->oauth->request_token($client->{token});
-      $client->oauth->request_token_secret($client->{token_secret});
+      $client->oauth->request_token($cookie->{token});
+      $client->oauth->request_token_secret($cookie->{token_secret});
 
       my($access_token, $access_token_secret)
           = $client->oauth->request_access_token;
