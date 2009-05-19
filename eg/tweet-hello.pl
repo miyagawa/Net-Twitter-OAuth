@@ -10,13 +10,13 @@ my $client = Net::Twitter::OAuth->new(
     consumer_secret => $ENV{TWITTER_CONSUMER_SECRET},
 );
 
-unless ($client->is_authorized) {
+unless ($client->oauth->authorized) {
     # The client is not yet authorized: Do it now
-    print "Authorize this app at ", $client->oauth_authorize_url, " and hit RET\n";
-    system "open", $client->oauth_authorize_url;
+    print "Authorize this app at ", $client->oauth->get_authorization_url, " and hit RET\n";
+    system "open", $client->oauth->get_authorization_url;
 
     <STDIN>; # wait for input
-    $client->request_access_token;
+    $client->oauth->request_access_token;
 }
 
 binmode STDOUT, ":utf8";
