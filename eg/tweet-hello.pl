@@ -27,6 +27,7 @@ for my $tweet (@$tweets) {
 }
 
 print "\nSomething to say: ";
+binmode STDIN, ":encoding(utf-8)";
 chomp(my $tweet = <STDIN>);
 my $res = $client->update({ status => $tweet });
 
