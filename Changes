@@ -1,5 +1,8 @@
 Revision history for Perl extension Net::Twitter::OAuth
 
+0.06  Thu May 28 13:27:17 PDT 2009
+        - Updated eg/tweet-hello.pl to make sure Unicode chars work fine on UTF8 console.
+
 0.05  Tue May 19 01:57:30 PDT 2009
         - Fixed a documentation typo and code bugs around handling Cookies.
           (Thanks to typester)
